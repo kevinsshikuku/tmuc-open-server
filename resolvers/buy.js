@@ -17,16 +17,7 @@ const Query = {
         path: 'author',
         populate: [
           { path: 'following' },
-          { path: 'followers' },
-          {
-            path: 'notifications',
-            populate: [
-              { path: 'author' },
-              { path: 'follow' },
-              { path: 'like' },
-              { path: 'comment' },
-            ],
-          },
+          { path: 'followers' }
         ],
       })
       .populate('likes')
@@ -68,15 +59,6 @@ getPaginatedBuys: async (_,{ limit, after}, {Buy}) => {
         populate: [
           { path: 'following' },
           { path: 'followers' },
-          {
-            path: 'notifications',
-            populate: [
-              { path: 'author' },
-              { path: 'follow' },
-              { path: 'like' },
-              { path: 'comment' },
-            ],
-          },
         ],
       })
       .populate('likes')
@@ -134,16 +116,7 @@ getPaginatedBuys: async (_,{ limit, after}, {Buy}) => {
         path: 'author',
         populate: [
           { path: 'following' },
-          { path: 'followers' },
-          {
-            path: 'notifications',
-            populate: [
-              { path: 'author' },
-              { path: 'follow' },
-              { path: 'like' },
-              { path: 'comment' },
-            ],
-          },
+          { path: 'followers' }
         ],
       })
       .populate('likes')
@@ -208,20 +181,7 @@ getPaginatedBuys: async (_,{ limit, after}, {Buy}) => {
         path: 'author',
         populate: [
           { path: 'following' },
-          { path: 'followers' },
-          {
-            path: 'notifications',
-            populate: [
-              { path: 'author' },
-              { path: 'follow' },
-              { path: 'like' },
-              { path: 'comment',
-                populate: [
-                  {path: 'commentcomment'}
-                ]
-               },
-            ],
-          },
+          { path: 'followers' }
         ],
       })
       .populate('likes')
