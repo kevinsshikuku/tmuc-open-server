@@ -11,6 +11,11 @@ const messageSchema = Schema(
       type: Schema.Types.ObjectId,
       ref: 'User',
     },
+    replies: [
+      {
+      type: Schema.Types.ObjectId,
+      ref: "Reply"
+    }],
     body: String,
   },
   { timestamps: true }
