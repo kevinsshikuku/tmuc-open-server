@@ -6,6 +6,7 @@ import Comment from './Comment';
 import Message from './Message';
 import View from './View';
 import Buy from './Buy';
+import Reply from "./Reply"
 
 
 /** Models */
@@ -17,5 +18,10 @@ export default {
   View,
   Follow,
   Comment,
+  Reply,
   Message,
 };
+
+
+
+
