@@ -10,12 +10,22 @@ const MessageSchema = gql`
     id: ID
     body: String
     sender: User
+    replies: [Reply]
     createdAt: String
   }
+
+ type Reply {
+   id: ID
+   body:String
+   author: User
+   message: Message
+   createdAt: String
+ }
 
 #--------------------------------------------------------------------------
 extend type Query {
   getMessages: [Message]
+  getMessage(messageId:ID!):  Message
 
  }
 
@@ -25,6 +35,12 @@ extend type Query {
     createMessage(
         body: String!
      ): Message
+
+    # Creates a post message
+    sendReply(
+        body: String!
+        messageId: ID!
+     ): Reply
 
     # Deletes a post comment
     deleteMessage(id: ID!): Message
